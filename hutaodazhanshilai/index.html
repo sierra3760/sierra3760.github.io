@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>胡桃大战史莱姆 | 冒险影像社区 | 官方品牌站</title>
+<meta name="description" content="胡桃大战史莱姆官方网站，是一个以奇幻冒险影像为核心的原创内容社区，汇聚创作者、攻略、挑战与品牌故事，持续运营的高品质视频品牌平台。">
+<meta name="keywords" content="胡桃大战史莱姆,官网,原创,创作者,社区,攻略,挑战,品牌故事">
+<style>
+:root{
+  --ink:#1b1230;
+  --ink-soft:#4a3d66;
+  --plum:#5b2a86;
+  --plum-deep:#3a1560;
+  --magenta:#e048a8;
+  --amber:#ffb648;
+  --mint:#3fd6a8;
+  --paper:#f7f4fb;
+  --card:#ffffff;
+  --line:#e6dff2;
+  --shadow:0 10px 30px rgba(58,21,96,.12);
+  --radius:18px;
+  --stick:112px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+h1,h2,h3,h4{line-height:1.35;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+/* ===== 吸顶区域 ===== */
+.stick{
+  position:sticky;top:0;z-index:80;
+}
+.announce{
+  background:linear-gradient(90deg,var(--plum-deep),var(--plum) 45%,var(--magenta));
+  color:#fff;
+  font-size:13.5px;
+  display:flex;align-items:center;gap:14px;
+  padding:9px 22px;
+  overflow:hidden;
+}
+.announce .tag{
+  flex:0 0 auto;
+  background:var(--amber);color:#42210a;
+  font-weight:700;font-size:12px;
+  padding:2px 10px;border-radius:999px;
+  letter-spacing:.5px;
+}
+.announce .marquee{
+  flex:1;white-space:nowrap;overflow:hidden;position:relative;
+}
+.announce .marquee span{
+  display:inline-block;padding-left:100%;
+  animation:slide 26s linear infinite;
+}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.announce a{text-decoration:underline;text-underline-offset:3px}
+
+header.site{
+  background:rgba(247,244,251,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-wrap{
+  max-width:1200px;margin:0 auto;
+  padding:12px 22px;
+  display:flex;align-items:center;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.brand-mark{
+  width:42px;height:42px;border-radius:13px;
+  background:radial-gradient(circle at 30% 25%,var(--magenta),var(--plum) 70%);
+  display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px;
+  box-shadow:0 6px 16px rgba(224,72,168,.35);
+  transform:rotate(-6deg);
+}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:.5px}
+.brand-sub{font-size:11.5px;color:var(--ink-soft);letter-spacing:2px;display:block;margin-top:-4px}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+nav.main a{
+  font-size:14.5px;padding:7px 12px;border-radius:10px;color:var(--ink-soft);
+  transition:.2s;font-weight:500;
+}
+nav.main a:hover,nav.main a:focus-visible{background:#efe7fa;color:var(--plum);outline:none}
+.nav-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{
+  width:172px;padding:8px 34px 8px 12px;border-radius:999px;
+  border:1px solid var(--line);background:#fff;font-size:13px;color:var(--ink);
+  transition:.25s;
+}
+.search-box input:focus{outline:none;border-color:var(--plum);width:196px;box-shadow:0 0 0 4px rgba(91,42,134,.1)}
+.search-box .sicon{
+  position:absolute;right:10px;color:var(--plum);font-size:14px;pointer-events:none;
+}
+.search-hint{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);padding:8px;font-size:12.5px;color:var(--ink-soft);
+  display:none;z-index:99;
+}
+.search-hint.show{display:block}
+.search-hint b{color:var(--plum)}
+.btn{
+  border:none;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;
+  transition:.2s;display:inline-flex;align-items:center;gap:6px;
+}
+.btn-primary{background:linear-gradient(135deg,var(--plum),var(--magenta));color:#fff;box-shadow:0 8px 20px rgba(224,72,168,.3)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--plum);border:1px solid var(--line)}
+.btn-ghost:hover{background:#f2ebfa}
+.burger{
+  display:none;background:#fff;border:1px solid var(--line);border-radius:11px;
+  width:40px;height:40px;font-size:18px;color:var(--plum);
+}
+
+/* ===== 通用容器 ===== */
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+section{scroll-margin-top:var(--stick)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head .eyebrow{
+  font-size:12.5px;letter-spacing:3px;color:var(--magenta);font-weight:700;text-transform:uppercase;
+  display:block;margin-bottom:6px;
+}
+.sec-head h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:.5px}
+.sec-head p{font-size:14.5px;color:var(--ink-soft);max-width:520px;margin-top:8px}
+.pad{padding:64px 0}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 84% 12%,rgba(255,182,72,.22),transparent 46%),
+    radial-gradient(circle at 6% 80%,rgba(63,214,168,.18),transparent 50%),
+    linear-gradient(160deg,#22103d,#3a1560 52%,#4d1f73);
+  color:#fff;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);
+  background-size:26px 26px;opacity:.6;
+}
+.hero-grid{
+  position:relative;z-index:2;
+  max-width:1200px;margin:0 auto;padding:74px 22px 64px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+  padding:5px 14px;border-radius:999px;font-size:12.5px;letter-spacing:1.5px;margin-bottom:20px;
+}
+.hero-badge i{width:7px;height:7px;border-radius:50%;background:var(--mint);display:block;box-shadow:0 0 0 4px rgba(63,214,168,.22)}
+.hero h1{
+  font-size:clamp(30px,5.2vw,50px);font-weight:900;letter-spacing:1px;line-height:1.2;
+  text-shadow:0 6px 26px rgba(0,0,0,.28);
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--amber),#ffd89b 55%,var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lead{margin-top:18px;font-size:15.5px;color:#e3d7f5;max-width:560px}
+.hero .lead strong{color:#fff}
+.hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:30px;margin-top:34px;flex-wrap:wrap}
+.hero-stats .st{border-left:2px solid rgba(255,182,72,.6);padding-left:14px}
+.hero-stats .num{font-size:24px;font-weight:800;color:var(--amber);letter-spacing:.5px}
+.hero-stats .lab{font-size:12.5px;color:#c9b8e6;letter-spacing:.5px}
+.hero-visual{position:relative}
+.hero-visual .poster{
+  border-radius:24px;overflow:hidden;box-shadow:0 26px 60px rgba(0,0,0,.42);
+  border:1px solid rgba(255,255,255,.18);
+  transform:rotate(1.4deg);
+}
+.hero-visual .float-card{
+  position:absolute;background:rgba(255,255,255,.96);color:var(--ink);
+  border-radius:14px;padding:10px 14px;box-shadow:0 14px 34px rgba(0,0,0,.3);
+  font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:8px;
+}
+.hero-visual .fc1{left:-16px;bottom:52px}
+.hero-visual .fc2{right:-10px;top:-14px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--magenta);flex:0 0 auto}
+.dot.g{background:var(--mint)}
+.dot.a{background:var(--amber)}
+
+/* 视频封面通用 */
+.cover{position:relative;border-radius:14px;overflow:hidden;background:#2a1640;isolation:isolate}
+.cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.cover::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 38%,rgba(20,8,36,.72));
+  pointer-events:none;
+}
+.cover .play{
+  position:absolute;inset:0;margin:auto;width:46px;height:46px;border-radius:50%;
+  background:rgba(255,255,255,.9);display:grid;place-items:center;
+  color:var(--plum);font-size:16px;z-index:3;box-shadow:0 8px 22px rgba(0,0,0,.28);
+  transition:.25s;
+}
+.card:hover .cover .play{transform:scale(1.12);background:#fff}
+.cover .chip{
+  position:absolute;left:10px;top:10px;z-index:3;
+  background:rgba(58,21,96,.82);color:#fff;font-size:11.5px;font-weight:600;
+  padding:3px 9px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.cover .dur{
+  position:absolute;right:10px;bottom:10px;z-index:3;
+  background:rgba(0,0,0,.62);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:6px;
+  font-variant-numeric:tabular-nums;
+}
+.ratio16{aspect-ratio:16/9}
+
+/* ===== 焦点内容 ===== */
+.focus-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+.focus-main .cover{aspect-ratio:16/10}
+.focus-main .body{padding:16px 4px 0}
+.focus-side{display:grid;grid-template-rows:repeat(2,1fr);gap:22px}
+.focus-side .card{display:grid;grid-template-columns:.9fr 1.1fr;gap:14px;background:#fff;border-radius:var(--radius);padding:12px;box-shadow:0 6px 20px rgba(58,21,96,.07);border:1px solid var(--line)}
+.focus-side .cover{aspect-ratio:16/11}
+.focus-side .card-body{display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0}
+.card{
+  background:var(--card);border-radius:var(--radius);border:1px solid var(--line);
+  box-shadow:0 6px 20px rgba(58,21,96,.06);transition:transform .28s ease,box-shadow .28s ease;
+  overflow:hidden;
+}
+a.card:hover, .card.interactive:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(58,21,96,.15)}
+.card-title{font-size:16px;font-weight:700;letter-spacing:.3px}
+.card-desc{font-size:13.5px;color:var(--ink-soft);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta-row{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--ink-soft);flex-wrap:wrap;margin-top:auto}
+.tag{
+  display:inline-block;font-size:11.5px;padding:2px 9px;border-radius:999px;
+  background:#f0e8fa;color:var(--plum);font-weight:600;
+}
+.tag.amber{background:#fff2da;color:#9a5b06}
+.tag.mint{background:#dff7ef;color:#0f7a58}
+
+/* ===== 视频流 ===== */
+.v-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.v-card .card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;min-height:150px}
+.actions{display:flex;gap:8px;align-items:center;border-top:1px dashed var(--line);padding-top:10px;margin-top:4px}
+.act{
+  background:#f7f2fc;border:1px solid transparent;border-radius:999px;
+  padding:4px 11px;font-size:12.5px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:5px;
+  transition:.2s;
+}
+.act:hover{background:#efe3fb;color:var(--plum)}
+.act.liked{background:#fde8f4;color:var(--magenta);font-weight:700}
+.act.faved{background:#fdebf3;color:#c92b86}
+.act .ic{font-size:13px}
+.author-mini{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-soft)}
+.avatar{
+  width:26px;height:26px;border-radius:50%;flex:0 0 auto;
+  display:grid;place-items:center;color:#fff;font-size:12px;font-weight:700;
+}
+
+/* ===== 专题 ===== */
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.topic{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  min-height:210px;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:20px;color:#fff;isolation:isolate;border:1px solid var(--line);
+  transition:transform .3s;
+}
+.topic:hover{transform:translateY(-4px)}
+.topic::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(20,8,36,.05),rgba(20,8,36,.82));
+}
+.topic h3{font-size:18px;font-weight:800}
+.topic p{font-size:13px;color:#eadff8;margin-top:6px}
+.topic .stat{position:absolute;right:16px;top:16px;font-size:11.5px;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+
+/* ===== 创作者 ===== */
+.creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.creator{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;
+  text-align:center;box-shadow:0 6px 20px rgba(58,21,96,.06);transition:.28s;
+}
+.creator:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(58,21,96,.14)}
+.creator .ava{
+  width:66px;height:66px;border-radius:50%;margin:0 auto 12px;
+  display:grid;place-items:center;color:#fff;font-size:24px;font-weight:800;
+  box-shadow:0 10px 22px rgba(58,21,96,.2);
+}
+.creator h3{font-size:15.5px}
+.creator .field{font-size:12.5px;color:var(--magenta);font-weight:600;margin-top:2px}
+.creator p{font-size:13px;color:var(--ink-soft);margin-top:10px;min-height:58px}
+.creator .nums{display:flex;justify-content:center;gap:14px;font-size:12px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:10px;margin-top:12px}
+.creator .nums b{color:var(--ink);font-size:13.5px}
+
+/* ===== 故事随笔 ===== */
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.story{
+  background:#fff;border-radius:var(--radius);border:1px solid var(--line);
+  padding:24px 22px;box-shadow:0 6px 20px rgba(58,21,96,.05);position:relative;
+}
+.story .quote{font-size:34px;color:#e8d7fa;line-height:.6;font-family:Georgia,serif}
+.story h3{font-size:16px;margin:10px 0 8px}
+.story p{font-size:13.5px;color:var(--ink-soft)}
+.story .by{font-size:12px;color:var(--magenta);font-weight:600;margin-top:14px}
+
+/* ===== 影像墙 ===== */
+.wall{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:96px;gap:14px}
+.wall .tile{position:relative;border-radius:14px;overflow:hidden;isolation:isolate}
+.wall .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(20,8,36,.6))}
+.wall .tile .cap{position:absolute;left:10px;bottom:8px;color:#fff;font-size:12px;font-weight:600;z-index:2;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+.wall .t-big{grid-column:span 2;grid-row:span 3}
+.wall .t-mid{grid-column:span 2;grid-row:span 2}
+.wall .t-sm{grid-column:span 1;grid-row:span 1}
+.wall .t-wide{grid-column:span 2;grid-row:span 1}
+
+/* ===== 评价 ===== */
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;
+  font-size:13.5px;color:var(--ink-soft);box-shadow:0 4px 16px rgba(58,21,96,.05);
+  position:relative;
+}
+.review .stars{color:var(--amber);font-size:13px;letter-spacing:2px}
+.review p{margin:8px 0 12px}
+.review .who{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink);font-weight:600}
+
+/* ===== 动态/合作/FAQ ===== */
+.two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:start}
+.timeline{border-left:2px solid #e8dcf6;padding-left:22px;display:grid;gap:20px}
+.timeline .item{position:relative}
+.timeline .item::before{
+  content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;
+  background:#fff;border:2px solid var(--magenta);
+}
+.timeline .date{font-size:12.5px;color:var(--magenta);font-weight:700;letter-spacing:.5px}
+.timeline h3{font-size:15px;margin:3px 0 4px}
+.timeline p{font-size:13.5px;color:var(--ink-soft)}
+.partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.partner{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 16px;
+  font-size:13px;font-weight:600;color:var(--ink-soft);
+}
+details.faq{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;
+  margin-bottom:10px;box-shadow:0 3px 12px rgba(58,21,96,.04);
+}
+details.faq summary{
+  cursor:pointer;font-weight:700;font-size:14.5px;list-style:none;display:flex;justify-content:space-between;gap:12px;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"＋";color:var(--magenta);font-weight:700}
+details.faq[open] summary::after{content:"－"}
+details.faq p{font-size:13.5px;color:var(--ink-soft);margin-top:10px}
+
+/* ===== CTA/联系 ===== */
+.cta{
+  background:linear-gradient(130deg,#2c1149,#4d1f73 55%,#7a2b86);
+  color:#fff;border-radius:26px;padding:44px 40px;position:relative;overflow:hidden;
+}
+.cta::before{
+  content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,182,72,.35),transparent 70%);
+}
+.cta h2{font-size:clamp(21px,3.2vw,28px)}
+.cta p{color:#e0d2f3;font-size:14.5px;margin-top:10px;max-width:560px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.cta .btn-ghost{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3)}
+.cta .btn-ghost:hover{background:rgba(255,255,255,.2)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.contact-grid .cc{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:14px 16px}
+.contact-grid .cc .k{font-size:12px;color:#c9b8e6;letter-spacing:1px}
+.contact-grid .cc .v{font-size:14.5px;font-weight:700;margin-top:2px}
+
+/* ===== 页脚 ===== */
+footer.site{
+  background:#160a26;color:#c6b7dd;margin-top:64px;padding:52px 0 26px;font-size:13.5px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.foot-grid h4{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:1px}
+.foot-grid a{display:block;color:#b6a4d1;margin-bottom:8px;font-size:13px;transition:.2s}
+.foot-grid a:hover{color:var(--amber)}
+.foot-brand .brand-name{color:#fff}
+.foot-brand p{color:#a494c0;font-size:13px;margin-top:12px;max-width:330px}
+.foot-bottom{
+  border-top:1px solid #2c1a44;margin-top:38px;padding-top:20px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#8d7aa9;
+}
+
+/* ===== 悬浮/弹窗 ===== */
+.toast{
+  position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);
+  background:#1b1230;color:#fff;padding:11px 22px;border-radius:999px;font-size:13.5px;
+  box-shadow:0 14px 34px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:.3s;z-index:200;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.to-top{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,var(--plum),var(--magenta));color:#fff;border:none;
+  font-size:18px;box-shadow:0 10px 26px rgba(224,72,168,.4);z-index:120;
+  opacity:0;pointer-events:none;transition:.3s;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+.modal{
+  position:fixed;inset:0;z-index:300;display:none;place-items:center;padding:20px;
+  background:rgba(22,10,38,.55);backdrop-filter:blur(4px);
+}
+.modal.show{display:grid}
+.modal-card{
+  background:#fff;border-radius:20px;max-width:440px;width:100%;padding:26px;
+  box-shadow:0 30px 70px rgba(0,0,0,.35);position:relative;
+}
+.modal-card h3{font-size:18px;margin-bottom:8px}
+.modal-card p{font-size:13.5px;color:var(--ink-soft)}
+.modal-card .close{
+  position:absolute;right:14px;top:12px;background:none;border:none;font-size:20px;color:var(--ink-soft);
+}
+.modal-card textarea{
+  width:100%;min-height:96px;margin-top:14px;border:1px solid var(--line);border-radius:12px;
+  padding:10px 12px;font-family:inherit;font-size:13.5px;resize:vertical;color:var(--ink);
+}
+.modal-card textarea:focus{outline:none;border-color:var(--plum)}
+.share-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.share-row .sb{
+  border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 14px;
+  font-size:13px;color:var(--ink-soft);transition:.2s;
+}
+.share-row .sb:hover{background:#f2ebfa;color:var(--plum)}
+
+/* ===== 响应式 ===== */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:38px;padding-top:52px}
+  .v-grid,.topic-grid,.story-grid,.review-grid{grid-template-columns:repeat(2,1fr)}
+  .creator-grid{grid-template-columns:repeat(2,1fr)}
+  .focus-grid{grid-template-columns:1fr}
+  .focus-side{grid-template-rows:auto;grid-template-columns:repeat(2,1fr)}
+  .two-col{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  nav.main{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:#fff;border-bottom:1px solid var(--line);padding:12px 18px 18px;
+    flex-direction:column;gap:2px;box-shadow:0 18px 30px rgba(58,21,96,.12);
+  }
+  nav.main.open{display:flex}
+  .nav-wrap{position:relative;flex-wrap:wrap}
+  .burger{display:block;order:3;margin-left:auto}
+  .nav-tools .search-box{display:none}
+  .v-grid,.topic-grid,.story-grid,.review-grid,.creator-grid,.focus-side{grid-template-columns:1fr}
+  .wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:110px}
+  .wall .t-big{grid-column:span 2;grid-row:span 2}
+  .wall .t-mid{grid-column:span 2;grid-row:span 1}
+  .wall .t-wide{grid-column:span 2}
+  .cta{padding:32px 22px}
+  .contact-grid{grid-template-columns:1fr}
+  .hero-stats{gap:20px}
+  .announce{font-size:12.5px;padding:8px 14px}
+  .pad{padding:46px 0}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶：公告条 + 页头 -->
+<div class="stick">
+  <div class="announce" role="region" aria-label="站内公告">
+    <span class="tag">官方发布</span>
+    <div class="marquee"><span>「胡桃与史莱姆」第三季原创短片《熔火之夏》已上线 · 夏日挑战赛报名开启 · 创作者激励计划 7 月名单公布 · 官方高清素材包开放下载</span></div>
+    <a href="#news">查看详情</a>
+  </div>
+
+  <header class="site">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="胡桃大战史莱姆官方网站首页">
+        <span class="brand-mark" aria-hidden="true">胡</span>
+        <span>
+          <span class="brand-name">胡桃大战史莱姆</span>
+          <span class="brand-sub">HUTAO × SLIME · 品牌官网</span>
+        </span>
+      </a>
+      <nav class="main" id="mainNav" aria-label="主导航">
+        <a href="#top">首页</a>
+        <a href="#focus">焦点内容</a>
+        <a href="#topics">专题企划</a>
+        <a href="#creators">创作者</a>
+        <a href="#wall">影像馆</a>
+        <a href="#news">企业动态</a>
+        <a href="#faq">帮助</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <div class="nav-tools">
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="搜索内容 / 创作者" aria-label="搜索内容或创作者">
+          <span class="sicon" aria-hidden="true">⌕</span>
+          <div class="search-hint" id="searchHint" role="status"></div>
+        </div>
+        <a class="btn btn-primary" href="#contact">投稿入口</a>
+      </div>
+      <button class="burger" id="burger" aria-label="展开导航菜单" aria-expanded="false" aria-controls="mainNav">☰</button>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <span class="hero-badge"><i></i>原创奇幻冒险影像 · 官方品牌站</span>
+      <h1>胡桃大战史莱姆 <em>官方网站</em></h1>
+      <p class="lead">作为国内<strong>深耕奇幻冒险题材</strong>的原创视频品牌，我们把「胡桃」与「史莱姆」之间永不停歇的对决，做成一个<strong>高品质、可持续运营</strong>的内容生态。这里是企业的官方发布阵地，也是创作者与观众共同成长的社区——原创短片、挑战赛、攻略拆解、幕后记录，全部由平台与创作者共同完成。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#focus">进入焦点内容</a>
+        <a class="btn btn-ghost" href="#creators">认识创作者</a>
+        <button class="btn btn-ghost" id="copyBtn" type="button">复制本站入口</button>
+      </div>
+      <div class="hero-stats">
+        <div class="st"><div class="num" data-count="1286">0</div><div class="lab">原创作品累计</div></div>
+        <div class="st"><div class="num" data-count="340000">0</div><div class="lab">社区活跃用户</div></div>
+        <div class="st"><div class="num" data-count="52">0</div><div class="lab">签约创作者</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="poster cover ratio16">
+        <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232a1048'/%3E%3Cstop offset='0.55' stop-color='%235b2a86'/%3E%3Cstop offset='1' stop-color='%23e048a8'/%3E%3C/linearGradient%3E%3CradialGradient id='g2' cx='0.72' cy='0.28' r='0.5'%3E%3Cstop offset='0' stop-color='%23ffb648' stop-opacity='0.85'/%3E%3Cstop offset='1' stop-color='%23ffb648' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23g1)'/%3E%3Crect width='640' height='360' fill='url(%23g2)'/%3E%3Ccircle cx='470' cy='120' r='66' fill='%233fd6a8' opacity='0.35'/%3E%3Ccircle cx='470' cy='120' r='42' fill='%233fd6a8' opacity='0.55'/%3E%3Ccircle cx='180' cy='250' r='54' fill='%23ffb648' opacity='0.28'/%3E%3Cpath d='M0 300 Q120 220 250 290 T640 270 V360 H0Z' fill='%23160a26' opacity='0.7'/%3E%3Cpath d='M90 120 l26 60 l-52 0z' fill='%23ffb648' opacity='0.9'/%3E%3Cpath d='M600 60 l18 40 l-36 0z' fill='%23e048a8' opacity='0.85'/%3E%3Crect x='250' y='180' width='120' height='14' rx='7' fill='%23ffffff' opacity='0.55'/%3E%3Crect x='250' y='208' width='86' height='10' rx='5' fill='%23ffffff' opacity='0.35'/%3E%3C/svg%3E" alt="胡桃大战史莱姆官方品牌主视觉：紫金交织的熔火战场与史莱姆光球">
+        <span class="chip">官方主视觉</span>
+        <span class="play" aria-hidden="true">▶</span>
+      </div>
+      <div class="float-card fc1"><span class="dot g"></span>第三季已更新 12 集</div>
+      <div class="float-card fc2"><span class="dot a"></span>夏日挑战赛 · 报名中</div>
+    </div>
+  </div>
+</section>
+
+<!-- 焦点内容 -->
+<section class="pad" id="focus">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Focus · 焦点内容</span>
+        <h2>本周焦点：熔火之夏的对决美学</h2>
+        <p>由官方内容团队策划，聚焦胡桃与史莱姆之间的高光时刻，兼顾专业拆解与情绪表达。</p>
+      </div>
+      <a class="btn btn-ghost" href="#wall">浏览全部影像</a>
+    </div>
+
+    <div class="focus-grid">
+      <article class="focus-main card">
+        <div class="cover ratio16">
+          <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%231f0f36'/%3E%3Cstop offset='1' stop-color='%23a02a7a'/%3E%3C/linearGradient%3E%3ClinearGradient id='f2' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='%23ffb648'/%3E%3Cstop offset='1' stop-color='%23e048a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='400' fill='url(%23f1)'/%3E%3Cg opacity='0.35'%3E%3Ccircle cx='120' cy='90' r='70' fill='%23ffffff'/%3E%3Ccircle cx='540' cy='320' r='100' fill='%233fd6a8'/%3E%3C/g%3E%3Cpath d='M60 330 Q180 180 320 290 T600 210' stroke='url(%23f2)' stroke-width='12' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='320' cy='200' r='58' fill='%23ffb648' opacity='0.8'/%3E%3Ccircle cx='320' cy='200' r='34' fill='%23fff5e2' opacity='0.9'/%3E%3Cpath d='M120 120 l14 34 l-28 0z' fill='%23e048a8'/%3E%3Crect x='420' y='90' width='110' height='12' rx='6' fill='%23ffffff' opacity='0.6'/%3E%3C/svg%3E" alt="焦点短片《熔火之夏》官方封面，暖色光束穿越紫色战场">
+          <span class="chip">官方原创</span>
+          <span class="dur">12:48</span>
+          <span class="play" aria-hidden="true">▶</span>
+        </div>
+        <div class="body">
+          <h3 class="card-title">《熔火之夏》：当火元素遇上果冻状生命体</h3>
+          <p class="card-desc">一次关于「柔与刚」的影像实验。官方团队用三周时间还原熔岩洞窟的光影层次，并邀请七位创作者共同完成史莱姆的材质表现，最终呈现出这支被社区反复讨论的原创短片。</p>
+          <div class="meta-row">
+            <span class="tag amber">原创短片</span>
+            <span class="tag">创作幕后</span>
+            <span>官方内容组</span>
+            <span>·</span>
+            <span>2.4 万次播放</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="focus-side">
+        <article class="card interactive">
+          <div class="cover">
+            <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='s1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f3d33'/%3E%3Cstop offset='1' stop-color='%233fd6a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23s1)'/%3E%3Ccircle cx='150' cy='150' r='62' fill='%23ffffff' opacity='0.28'/%3E%3Ccircle cx='150' cy='150' r='40' fill='%23ffffff' opacity='0.5'/%3E%3Ccircle cx='140' cy='140' r='9' fill='%230f3d33' opacity='0.7'/%3E%3Ccircle cx='168' cy='140' r='9' fill='%230f3d33' opacity='0.7'/%3E%3Cpath d='M132 168 q18 14 36 0' stroke='%230f3d33' stroke-width='4' fill='none' opacity='0.7'/%3E%3Crect x='250' y='60' width='100' height='10' rx='5' fill='%23ffffff' opacity='0.5'/%3E%3Crect x='250' y='84' width='70' height='8' rx='4' fill='%23ffffff' opacity='0.3'/%3E%3C/svg%3E" alt="史莱姆生态观察封面，青色果冻状生物特写">
+            <span class="chip">深度测评</span>
+            <span class="play" aria-hidden="true">▶</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">史莱姆生态观察：从单体到群落的 9 种形态</h3>
+            <div class="meta-row"><span class="tag mint">知识科普</span><span>8:21</span></div>
+          </div>
+        </article>
+        <article class="card interactive">
+          <div class="cover">
+            <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='s2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23411a04'/%3E%3Cstop offset='1' stop-color='%23ffb648'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23s2)'/%3E%3Cpath d='M0 240 L80 150 L140 200 L210 110 L280 180 L400 90 V300 H0Z' fill='%23220e02' opacity='0.55'/%3E%3Ccircle cx='320' cy='70' r='38' fill='%23fff3d6' opacity='0.85'/%3E%3Crect x='40' y='50' width='120' height='12' rx='6' fill='%23ffffff' opacity='0.6'/%3E%3Crect x='40' y='74' width='80' height='8' rx='4' fill='%23ffffff' opacity='0.35'/%3E%3C/svg%3E" alt="胡桃角色动作拆解封面，暖橙山脊与角色剪影">
+            <span class="chip">教程干货</span>
+            <span class="play" aria-hidden="true">▶</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">胡桃的三种位移节奏：动作设计与镜头语言</h3>
+            <div class="meta-row"><span class="tag amber">实用技巧</span><span>6:05</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 热门视频流 -->
+<section class="pad" id="videos" style="background:linear-gradient(180deg,#f2ecfa,#f7f4fb)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Community · 热门内容</span>
+        <h2>社区正在讨论的原创作品</h2>
+        <p>由平台创作者上传、经官方审核的精品内容，覆盖教程、访谈、记录与挑战多个方向。</p>
+      </div>
+    </div>
+    <div class="v-grid" id="videoGrid">
+      <article class="card v-card">
+        <div class="cover ratio16">
+          <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23290f4a'/%3E%3Cstop offset='1' stop-color='%23e048a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v1)'/%3E%3Cpath d='M60 210 Q140 100 240 180 T430 120' stroke='%23ffb648' stroke-width='9' fill='none' stroke-linecap='round' opacity='0.85'/%3E%3Ccircle cx='240' cy='180' r='28' fill='%23ffffff' opacity='0.85'/%3E%3Ccircle cx='240' cy='180' r='12' fill='%23e048a8'/%3E%3Crect x='60' y='50' width='150' height='10' rx='5' fill='%23ffffff' opacity='0.5'/%3E%3C/svg%3E" alt="胡桃连招挑战赛回顾封面，紫粉轨迹与光点">
+          <span class="chip">挑战</span><span class="dur">09:12</span><span class="play" aria-hidden="true">▶</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">连招挑战赛回顾：48 小时内收到的 210 份投稿</h3>
+          <p class="card-desc">我们把社区投稿剪辑成一条长片，看看大家如何理解「击败史莱姆」这件事。</p>
+          <div class="author-mini"><span class="avatar" style="background:#5b2a86">林</span>林间放映员</div>
+          <div class="actions">
+            <button class="act like" type="button" data-count="328"><span class="ic">♥</span><span class="n">328</span></button>
+            <button class="act fav" type="button"><span class="ic">☆</span><span>收藏</span></button>
+            <button class="act share" type="button"><span class="ic">↗</span>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card v-card">
+        <div class="cover ratio16">
+          <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v2' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23062c3f'/%3E%3Cstop offset='1' stop-color='%233fd6a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v2)'/%3E%3Cg fill='%23ffffff' opacity='0.75'%3E%3Ccircle cx='120' cy='140' r='34'/%3E%3Ccircle cx='190' cy='170' r='22'/%3E%3Ccircle cx='160' cy='105' r='16'/%3E%3C/g%3E%3Crect x='280' y='100' width='130' height='12' rx='6' fill='%23ffffff' opacity='0.6'/%3E%3Crect x='280' y='126' width='90' height='9' rx='4' fill='%23ffffff' opacity='0.35'/%3E%3Crect x='280' y='150' width='110' height='9' rx='4' fill='%23ffffff' opacity='0.25'/%3E%3C/svg%3E" alt="史莱姆材质研究封面，冷青水珠与实验室构图">
+          <span class="chip">教程</span><span class="dur">14:36</span><span class="play" aria-hidden="true">▶</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">材质研究笔记：如何让史莱姆看起来「有弹性」</h3>
+          <p class="card-desc">从高光位置到形变曲线，一份可以直接套用的参数清单。</p>
+          <div class="author-mini"><span class="avatar" style="background:#0f7a58">陈</span>陈默的建模台</div>
+          <div class="actions">
+            <button class="act like" type="button" data-count="512"><span class="ic">♥</span><span class="n">512</span></button>
+            <button class="act fav" type="button"><span class="ic">☆</span><span>收藏</span></button>
+            <button class="act share" type="button"><span class="ic">↗</span>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card v-card">
+        <div class="cover ratio16">
+          <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v3' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffd98a'/%3E%3Cstop offset='1' stop-color='%23c94a1e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v3)'/%3E%3Ccircle cx='380' cy='60' r='42' fill='%23fff6dd' opacity='0.9'/%3E%3Cpath d='M0 230 Q140 140 260 210 T480 170 V270 H0Z' fill='%236b2208' opacity='0.6'/%3E%3Cpath d='M100 190 l16 38 l-32 0z' fill='%23fff6dd' opacity='0.7'/%3E%3Crect x='60' y='60' width='140' height='12' rx='6' fill='%23ffffff' opacity='0.65'/%3E%3C/svg%3E" alt="夏日挑战赛幕后记录封面，暖阳下的橙色山丘">
+          <span class="chip">幕后</span><span class="dur">07:44</span><span class="play" aria-hidden="true">▶</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">挑战赛幕后：一场拍摄计划被天气改写的一天</h3>
+          <p class="card-desc">拍摄现场的临时决策，往往比剧本更接近作品真实的样子。</p>
+          <div class="author-mini"><span class="avatar" style="background:#c94a1e">周</span>周阿七的记录本</div>
+          <div class="actions">
+            <button class="act like" type="button" data-count="264"><span class="ic">♥</span><span class="n">264</span></button>
+            <button class="act fav" type="button"><span class="ic">☆</span><span>收藏</span></button>
+            <button class="act share" type="button"><span class="ic">↗</span>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card v-card">
+        <div class="cover ratio16">
+          <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v4' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23150b28'/%3E%3Cstop offset='1' stop-color='%235b2a86'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v4)'/%3E%3Ccircle cx='150' cy='130' r='52' fill='none' stroke='%23ffb648' stroke-width='3' opacity='0.9'/%3E%3Ccircle cx='150' cy='130' r='28' fill='%23ffb648' opacity='0.5'/%3E%3Crect x='250' y='70' width='160' height='10' rx='5' fill='%23ffffff' opacity='0.5'/%3E%3Crect x='250' y='96' width='120' height='9' rx='4' fill='%23ffffff' opacity='0.3'/%3E%3Crect x='250' y='120' width='140' height='9' rx='4' fill='%23ffffff' opacity='0.22'/%3E%3Crect x='250' y='150' width='90' height='26' rx='13' fill='%23e048a8' opacity='0.8'/%3E%3C/svg%3E" alt="创作者访谈封面，深紫背景与金色圆环光线">
+          <span class="chip">访谈</span><span class="dur">21:03</span><span class="play" aria-hidden="true">▶</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">人物访谈：一个普通观众如何成为签约创作者</h3>
+          <p class="card-desc">聊了聊投稿、反馈、被退回的十七版脚本，以及留下来的原因。</p>
+          <div class="author-mini"><span class="avatar" style="background:#5b2a86">官</span>官方演播室</div>
+          <div class="actions">
+            <button class="act like" type="button" data-count="896"><span class="ic">♥</span><span class="n">896</span></button>
+            <button class="act fav" type="button"><span class="ic">☆</span><span>收藏</span></button>
+            <button class="act share" type="button"><span class="ic">↗</span>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card v-card">
+        <div class="cover ratio16">
+          <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23dff7ef'/%3E%3Cstop offset='1' stop-color='%233fd6a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v5)'/%3E%3Cg fill='%230f7a58' opacity='0.55'%3E%3Crect x='70' y='150' width='60' height='80' rx='10'/%3E%3Crect x='150' y='120' width='60' height='110' rx='10'/%3E%3Crect x='230' y='170' width='60' height='60' rx='10'/%3E%3C/g%3E%3Ccircle cx='360' cy='90' r='40' fill='%23ffffff' opacity='0.75'/%3E%3Crect x='70' y='50' width='150' height='12' rx='6' fill='%230f7a58' opacity='0.5'/%3E%3C/svg%3E" alt="新手攻略封面，薄荷绿几何方块与白色光球">
+          <span class="chip">攻略</span><span class="dur">05:58</span><span class="play" aria-hidden="true">▶</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">新人七天入门：从第一次对战到独立完成一支短片</h3>
+          <p class="card-desc">把复杂的流程拆成七件小事，每天只花二十分钟。</p>
+          <div class="author-mini"><span class="avatar" style="background:#0f7a58">苏</span>苏打汽水不加冰</div>
+          <div class="actions">
+            <button class="act like" type="button" data-count="441"><span class="ic">♥</span><span class="n">441</span></button>
+            <button class="act fav" type="button"><span class="ic">☆</span><span>收藏</span></button>
+            <button class="act share" type="button"><span class="ic">↗</span>分享</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card v-card">
+        <div class="cover ratio16">
+          <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='v6' x1='1' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23f7c4e3'/%3E%3Cstop offset='1' stop-color='%235b2a86'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23v6)'/%3E%3Cpath d='M0 200 Q120 120 240 190 T480 150 V270 H0Z' fill='%232a1048' opacity='0.45'/%3E%3Ccircle cx='360' cy='80' r='30' fill='%23ffffff' opacity='0.7'/%3E%3Ccircle cx='100' cy='90' r='20' fill='%23ffb648' opacity='0.8'/%3E%3Crect x='60' y='210' width='160' height='12' rx='6' fill='%23ffffff' opacity='0.6'/%3E%3C/svg%3E" alt="治愈影像栏目封面，粉色黄昏与紫色山脊">
+          <span class="chip">治愈</span><span class="dur">04:47</span><span class="play" aria-hidden="true">▶</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">慢镜头里的史莱姆：我们为什么喜欢看它融化</h3>
+          <p class="card-desc">一段没有台词的影像，记录果冻状生命体在光下的呼吸。</p>
+          <div class="author-mini"><span class="avatar" style="background:#c92b86">沈</span>沈知夏的取景框</div>
+          <div class="actions">
+            <button class="act like" type="button" data-count="1102"><span class="ic">♥</span><span class="n">1102</span></button>
+            <button class="act fav" type="button"><span class="ic">☆</span><span>收藏</span></button>
+            <button class="act share" type="button"><span class="ic">↗</span>分享</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 专题企划 -->
+<section class="pad" id="topics">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Series · 专题企划</span>
+        <h2>正在进行的四个官方企划</h2>
+        <p>围绕品牌世界观展开的长期内容计划，每一季都由官方策划、社区共创、持续更新。</p>
+      </div>
+    </div>
+    <div class="topic-grid">
+      <a class="topic" href="#videos" style="background:linear-gradient(140deg,#2a1048,#8c2c7a)">
+        <span class="stat">更新至 12 集</span>
+        <h3>熔火纪年</h3>
+        <p>主线叙事短片合集，讲述胡桃与史莱姆族群的长期对峙与和解。</p>
+      </a>
+      <a class="topic" href="#videos" style="background:linear-gradient(140deg,#0d3b34,#3fd6a8)">
+        <span class="stat">征稿中</span>
+        <h3>果冻实验室</h3>
+        <p>面向创作者的材质与特效实验企划，优秀作品将进入官方素材库。</p>
+      </a>
+      <a class="topic" href="#videos" style="background:linear-gradient(140deg,#3d1a02,#ffb648)">
+        <span class="stat">报名进行中</span>
+        <h3>夏日对决挑战</h3>
+        <p>一年一度的社区挑战赛，参赛者需在限定条件下完成一支对战短片。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 创作者矩阵 -->
+<section class="pad" id="creators" style="background:#efe7f8">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Creators · 创作者矩阵</span>
+        <h2>与我们一同构建内容生态的人</h2>
+        <p>平台持续运营的签约创作者与优秀合作者，覆盖动画、实拍、解说与设计多个垂直领域。</p>
+      </div>
+    </div>
+    <div class="creator-grid">
+      <article class="creator">
+        <div class="ava" style="background:linear-gradient(135deg,#5b2a86,#e048a8)">林</div>
+        <h3>林间放映员</h3>
+        <div class="field">叙事短片 / 剪辑</div>
+        <p>擅长把对战拍成有呼吸感的叙事，作品节奏克制，被社区称为「最会留白的人」。</p>
+        <div class="nums"><span><b>86</b> 作品</span><span><b>4.2万</b> 关注</span></div>
+      </article>
+      <article class="creator">
+        <div class="ava" style="background:linear-gradient(135deg,#0f7a58,#3fd6a8)">陈</div>
+        <h3>陈默的建模台</h3>
+        <div class="field">三维建模 / 材质</div>
+        <p>专注史莱姆材质研究六年，公开过多套参数方案，是社区里最常被引用的技术作者。</p>
+        <div class="nums"><span><b>124</b> 作品</span><span><b>6.8万</b> 关注</span></div>
+      </article>
+      <article class="creator">
+        <div class="ava" style="background:linear-gradient(135deg,#9a5b06,#ffb648)">周</div>
+        <h3>周阿七的记录本</h3>
+        <div class="field">幕后记录 / 摄影</div>
+        <p>习惯拍摄失败与重来，作品里常有未被剪掉的手抖镜头，真实得让人愿意看完。</p>
+        <div class="nums"><span><b>59</b> 作品</span><span><b>3.1万</b> 关注</span></div>
+      </article>
+      <article class="creator">
+        <div class="ava" style="background:linear-gradient(135deg,#c92b86,#f7c4e3)">沈</div>
+        <h3>沈知夏的取景框</h3>
+        <div class="field">治愈影像 / 色彩</div>
+        <p>用慢镜头和自然光记录果冻状生命体，作品常被观众用来当作睡前的放松影像。</p>
+        <div class="nums"><span><b>73</b> 作品</span><span><b>5.5万</b> 关注</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 故事随笔 + 影像墙 -->
+<section class="pad" id="wall">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Stories · 故事与影像</span>
+        <h2>作品之外，还有一些值得留下的记录</h2>
+        <p>文字与影像互为补充，记录创作过程中的真实片段与社区的共同记忆。</p>
+      </div>
+    </div>
+
+    <div class="story-grid" style="margin-bottom:38px">
+      <article class="story">
+        <div class="quote" aria-hidden="true">“</div>
+        <h3>第一次把史莱姆做「软」，我用了三周</h3>
+        <p>前两周我一直在调颜色，后来才意识到问题不在颜色，而在形变的节奏。把关键帧从 12 帧拉到 20 帧之后，它终于像活的了。</p>
+        <div class="by">— 陈默的建模台</div>
+      </article>
+      <article class="story">
+        <div class="quote" aria-hidden="true">“</div>
+        <h3>被退回的第十七版脚本</h3>
+        <p>那天我在便利店门口坐了半小时，把稿子从头读到尾，忽然明白了问题：我写的是战斗，但观众想看的是胡桃为什么战斗。</p>
+        <div class="by">— 林间放映员</div>
+      </article>
+      <article class="story">
+        <div class="quote" aria-hidden="true">“</div>
+        <h3>关于「陪伴」的一点私心</h3>
+        <p>做内容这些年，最开心的不是播放量，而是有人说「每周五都在等更新」。这句话让我愿意把下一季也认真做完。</p>
+        <div class="by">— 沈知夏的取景框</div>
+      </article>
+    </div>
+
+    <div class="wall">
+      <a class="tile t-big" href="#videos">
+        <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='w1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232a1048'/%3E%3Cstop offset='1' stop-color='%23e048a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23w1)'/%3E%3Ccircle cx='200' cy='180' r='86' fill='%23ffb648' opacity='0.35'/%3E%3Ccircle cx='200' cy='180' r='54' fill='%23ffd98a' opacity='0.7'/%3E%3Cpath d='M0 330 Q110 240 200 310 T400 280 V400 H0Z' fill='%23160a26' opacity='0.7'/%3E%3C/svg%3E" alt="熔火纪年主题影像，金色光源下的紫粉战场">
+        <span class="cap">熔火纪年 · 主视觉</span>
+      </a>
+      <a class="tile t-mid" href="#videos">
+        <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='w2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23062c3f'/%3E%3Cstop offset='1' stop-color='%233fd6a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23w2)'/%3E%3Ccircle cx='130' cy='150' r='46' fill='%23ffffff' opacity='0.75'/%3E%3Ccircle cx='250' cy='110' r='26' fill='%233fd6a8' opacity='0.9'/%3E%3Ccircle cx='280' cy='190' r='18' fill='%233fd6a8' opacity='0.75'/%3E%3C/svg%3E" alt="果冻实验室影像，青色史莱姆群与白色光球">
+        <span class="cap">果冻实验室</span>
+      </a>
+      <a class="tile t-sm" href="#videos">
+        <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%239a5b06'/%3E%3Ccircle cx='100' cy='100' r='54' fill='%23ffb648' opacity='0.8'/%3E%3Ccircle cx='100' cy='100' r='24' fill='%23fff6dd'/%3E%3C/svg%3E" alt="夏日对决挑战影像，琥珀色圆形构图">
+        <span class="cap">夏日挑战</span>
+      </a>
+      <a class="tile t-sm" href="#videos">
+        <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%232a1048'/%3E%3Cpath d='M40 160 L100 50 L160 160Z' fill='%23e048a8' opacity='0.85'/%3E%3Ccircle cx='100' cy='120' r='18' fill='%23ffd98a'/%3E%3C/svg%3E" alt="创作者访谈影像，紫色几何三角与暖点">
+        <span class="cap">人物访谈</span>
+      </a>
+      <a class="tile t-wide" href="#videos">
+        <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Cdefs%3E%3ClinearGradient id='w3' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23dff7ef'/%3E%3Cstop offset='1' stop-color='%230f7a58'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='200' fill='url(%23w3)'/%3E%3Crect x='60' y='70' width='44' height='80' rx='8' fill='%23ffffff' opacity='0.7'/%3E%3Crect x='124' y='40' width='44' height='110' rx='8' fill='%23ffffff' opacity='0.55'/%3E%3Crect x='188' y='90' width='44' height='60' rx='8' fill='%23ffffff' opacity='0.45'/%3E%3C/svg%3E" alt="新手入门影像，薄荷绿阶梯构图">
+        <span class="cap">新手入门</span>
+      </a>
+      <a class="tile t-sm" href="#videos">
+        <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23c92b86'/%3E%3Ccircle cx='100' cy='110' r='46' fill='%23f7c4e3' opacity='0.85'/%3E%3Cpath d='M30 170 Q100 120 170 170' stroke='%23ffffff' stroke-width='6' fill='none' opacity='0.6'/%3E%3C/svg%3E" alt="治愈影像作品，粉色柔光与弧线">
+        <span class="cap">治愈影像</span>
+      </a>
+      <a class="tile t-sm" href="#videos">
+        <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23160a26'/%3E%3Ccircle cx='70' cy='80' r='28' fill='%233fd6a8' opacity='0.9'/%3E%3Ccircle cx='130' cy='130' r='22' fill='%23ffb648' opacity='0.9'/%3E%3Ccircle cx='130' cy='70' r='14' fill='%23e048a8' opacity='0.9'/%3E%3C/svg%3E" alt="剪辑思路作品，深底三色光点构图">
+        <span class="cap">剪辑思路</span>
+      </a>
+      <a class="tile t-sm" href="#videos">
+        <img src="data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%233d1a02'/%3E%3Cpath d='M0 150 L60 90 L110 140 L160 80 L200 130 V200 H0Z' fill='%23ffb648' opacity='0.7'/%3E%3Ccircle cx='150' cy='50' r='20' fill='%23fff6dd'/%3E%3C/svg%3E" alt="幕后记录作品，暖棕山脊与白色圆日">
+        <span class="cap">幕后记录</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 评价 -->
+<section class="pad" id="reviews" style="background:linear-gradient(180deg,#f7f4fb,#efe7f8)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Voices · 社区声音</span>
+        <h2>来自用户与创作者的真实反馈</h2>
+        <p>口碑来自持续运营中的每一次回应，我们保留所有真实的评价维度。</p>
+      </div>
+    </div>
+    <div class="review-grid">
+      <article class="review"><div class="stars">★★★★★</div><p>第一次投稿就被认真回复了，编辑给了三页修改建议，比我自己想的还细。</p><div class="who"><span class="avatar" style="background:#5b2a86">小</span>小满不吃香菜</div></article>
+      <article class="review"><div class="stars">★★★★☆</div><p>内容质量稳定，就是希望专题更新再快一点，等新一集等得有点久。</p><div class="who"><span class="avatar" style="background:#0f7a58">阿</span>阿柘</div></article>
+      <article class="review"><div class="stars">★★★★★</div><p>孩子跟着入门系列学了两个月，现在自己会剪小片段了，这点很感谢。</p><div class="who"><span class="avatar" style="background:#c94a1e">周</span>周末带娃的杨先生</div></article>
+      <article class="review"><div class="stars">★★★★★</div><p>材质那期真的救命，参数直接能用，省了我至少一周的试错时间。</p><div class="who"><span class="avatar" style="background:#0f7a58">蓝</span>蓝莓山丘</div></article>
+      <article class="review"><div class="stars">★★★★☆</div><p>社区氛围挺好的，评论区基本没有争吵，讨论都很具体。</p><div class="who"><span class="avatar" style="background:#c92b86">木</span>木木不加糖</div></article>
+      <article class="review"><div class="stars">★★★★★</div><p>从第一季追到现在，能感受到制作在进步，尤其是光影的处理。</p><div class="who"><span class="avatar" style="background:#9a5b06">何</span>何似在人间</div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 企业动态 + 合作 + FAQ -->
+<section class="pad" id="news">
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <div class="sec-head" style="margin-bottom:20px">
+          <div>
+            <span class="eyebrow">News · 企业动态</span>
+            <h2>官方发布与内容更新</h2>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="item">
+            <div class="date">2024 · 07 · 18</div>
+            <h3>第三季原创短片《熔火之夏》正式上线</h3>
+            <p>本季共 12 集，官方首次采用实拍与三维结合的流程，并在片尾公开了部分制作参数。</p>
+          </div>
+          <div class="item">
+            <div class="date">2024 · 07 · 09</div>
+            <h3>夏日对决挑战赛开启报名</h3>
+            <p>面向所有注册创作者开放，提交限定条件下的对战短片即可参与评选，优秀作品进入官方推荐位。</p>
+          </div>
+          <div class="item">
+            <div class="date">2024 · 06 · 26</div>
+            <h3>创作者激励计划第二季度名单公布</h3>
+            <p>共 18 位创作者入选，平台将提供制作支持与联合出品机会，名单已在社区内公示。</p>
+          </div>
+          <div class="item">
+            <div class="date">2024 · 06 · 12</div>
+            <h3>官方高清素材包开放下载</h3>
+            <p>包含场景、材质与音效三类资源，供已签约创作者在授权范围内用于原创内容制作。</p>
+          </div>
+        </div>
+        <h3 style="font-size:15px;margin:26px 0 0">合作品牌与伙伴</h3>
+        <div class="partners">
+          <span class="partner">光屿动画工作室</span>
+          <span class="partner">果冻研究所</span>
+          <span class="partner">北岸声场</span>
+          <span class="partner">像素集市</span>
+          <span class="partner">青禾放映</span>
+        </div>
+      </div>
+
+      <div id="faq">
+        <div class="sec-head" style="margin-bottom:20px">
+          <div>
+            <span class="eyebrow">Help · 帮助中心</span>
+            <h2>常见问题</h2>
+          </div>
+        </div>
+        <details class="faq" open>
+          <summary>如何向平台投稿自己的作品？</summary>
+          <p>注册账号后进入投稿入口，填写作品信息并上传成片即可。平台会在五个工作日内给出审核意见，未通过的作品会附带具体修改建议。</p>
+        </details>
+        <details class="faq">
+          <summary>投稿对题材和时长有要求吗？</summary>
+          <p>作品需与胡桃与史莱姆的世界观相关，时长建议在 3 到 25 分钟之间。超出范围的实验性作品可以通过专题企划通道单独沟通。</p>
+        </details>
+        <details class="faq">
+          <summary>成为签约创作者需要什么条件？</summary>
+          <p>我们更看重持续创作的能力与表达的一致性，而非单条作品的播放量。通常需要在平台发布过三支以上原创作品，并保持稳定更新。</p>
+        </details>
+        <details class="faq">
+          <summary>官方素材包可以商用吗？</summary>
+          <p>素材包仅授权用于平台内的原创内容制作，不可单独转售或用于平台外商业项目。具体条款可在下载页面查看完整说明。</p>
+        </details>
+        <details class="faq">
+          <summary>挑战赛的评选标准是什么？</summary>
+          <p>评选由官方评审与社区投票共同决定，比例约为七比三。评审维度包括创意完成度、技术表现与叙事完整度。</p>
+        </details>
+        <details class="faq">
+          <summary>遇到版权或内容问题如何反馈？</summary>
+          <p>可通过页面底部的联系入口提交反馈，或直接发送邮件至官方邮箱。我们承诺在三个工作日内响应并跟进处理。</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 联系 -->
+<section class="pad" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <h2>把你的胡桃与史莱姆，交给更多人看见</h2>
+      <p>无论你擅长动画、实拍、解说还是设计，这里都有一块属于你的位置。官方网站持续开放投稿入口，官方团队会认真读完每一份作品。</p>
+      <div class="cta-actions">
+        <button class="btn btn-primary" id="submitBtn" type="button">打开投稿入口</button>
+        <button class="btn btn-ghost" id="shareBtn" type="button">分享本页</button>
+        <a class="btn btn-ghost" href="#faq">查看帮助</a>
+      </div>
+      <div class="contact-grid">
+        <div class="cc"><div class="k">合作邮箱</div><div class="v">brand@hutao-slime.studio</div></div>
+        <div class="cc"><div class="k">投稿咨询</div><div class="v">create@hutao-slime.studio</div></div>
+        <div class="cc"><div class="k">工作时间</div><div class="v">周一至周五 10:00 - 19:00</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand" style="gap:11px">
+          <span class="brand-mark" aria-hidden="true">胡</span>
+          <span>
+            <span class="brand-name">胡桃大战史莱姆</span>
+            <span class="brand-sub" style="color:#8d7aa9">HUTAO × SLIME</span>
+          </span>
+        </div>
+        <p>胡桃大战史莱姆官方网站，由官方内容团队持续运营，致力于构建原创奇幻冒险影像的内容生态，以高品质与真实表达连接创作者与观众。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <a href="#focus">焦点内容</a>
+        <a href="#videos">热门作品</a>
+        <a href="#topics">专题企划</a>
+        <a href="#wall">影像馆</a>
+      </div>
+      <div>
+        <h4>参与</h4>
+        <a href="#creators">创作者矩阵</a>
+        <a href="#contact">投稿入口</a>
+        <a href="#news">企业动态</a>
+        <a href="#faq">帮助中心</a>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <a href="#top">品牌介绍</a>
+        <a href="#reviews">社区口碑</a>
+        <a href="#contact">联系我们</a>
+        <a href="#top">官方发布</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 胡桃大战史莱姆官方网站 · 版权所有 · 持续运营中</span>
+      <span>备案号：XXXXXX 号-1 （占位） · 内容均为原创或已获授权</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <button class="close" id="modalClose" aria-label="关闭弹窗">×</button>
+    <h3 id="modalTitle">投稿入口</h3>
+    <p id="modalDesc">请简单描述你的作品方向与预计时长，官方团队会在五个工作日内通过邮件回复你。</p>
+    <textarea id="modalText" placeholder="例如：一支关于胡桃与史莱姆初次相遇的 8 分钟实拍短片……"></textarea>
+    <div class="share-row" id="modalActions">
+      <button class="btn btn-primary" id="modalSend" type="button">提交意向</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端导航 */
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('mainNav');
+  if(burger&&nav){
+    burger.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'){nav.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+    });
+  }
+
+  /* Toast */
+  var toastEl=document.getElementById('toast');
+  var toastTimer=null;
+  function toast(msg){
+    toastEl.textContent=msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toastEl.classList.remove('show');},2200);
+  }
+
+  /* 搜索反馈 */
+  var data=[
+    '熔火之夏：当火元素遇上果冻状生命体',
+    '史莱姆生态观察：从单体到群落的 9 种形态',
+    '胡桃的三种位移节奏：动作设计与镜头语言',
+    '连招挑战赛回顾：48 小时内收到的 210 份投稿',
+    '材质研究笔记：如何让史莱姆看起来「有弹性」',
+    '新人七天入门：从第一次对战到独立完成一支短片',
+    '林间放映员','陈默的建模台','沈知夏的取景框','周阿七的记录本'
+  ];
+  var input=document.getElementById('searchInput');
+  var hint=document.getElementById('searchHint');
+  if(input&&hint){
+    input.addEventListener('input',function(){
+      var q=input.value.trim();
+      if(!q){hint.classList.remove('show');hint.innerHTML='';return;}
+      var res=data.filter(function(d){return d.indexOf(q)>-1;}).slice(0,4);
+      if(res.length){
+        hint.innerHTML='找到 '+res.length+' 条相关内容：<br>'+res.map(function(r){return '· '+r.replace(q,'<b>'+q+'</b>');}).join('<br>');
+      }else{
+        hint.innerHTML='暂无匹配结果，试试「史莱姆」「挑战赛」或「创作者」';
+      }
+      hint.classList.add('show');
+    });
+    input.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();toast('已为你检索「'+(input.value.trim()||'全部内容')+'」');hint.classList.remove('show');}
+    });
+    document.addEventListener('click',function(e){
+      if(!e.target.closest('.search-box')) hint.classList.remove('show');
+    });
+  }
+
+  /* 点赞 */
+  document.querySelectorAll('.act.like').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var n=btn.querySelector('.n');
+      var liked=btn.classList.toggle('liked');
+      var base=parseInt(btn.getAttribute('data-count')||n.textContent,10);
+      var cur=parseInt(n.textContent,10);
+      n.textContent=liked?cur+1:cur-1;
+      btn.querySelector('.ic').textContent=liked?'♥':'♡';
+      if(liked) toast('已点赞，感谢你的支持');
+    });
+  });
+
+  /* 收藏 */
+  document.querySelectorAll('.act.fav').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var faved=btn.classList.toggle('faved');
+      btn.querySelector('.ic').textContent=faved?'★':'☆';
+      btn.querySelector('span:last-child').textContent=faved?'已收藏':'收藏';
+      toast(faved?'已加入收藏夹':'已取消收藏');
+    });
+  });
+
+  /* 分享 -> 弹窗 */
+  var modal=document.getElementById('modal');
+  var modalTitle=document.getElementById('modalTitle');
+  var modalDesc=document.getElementById('modalDesc');
+  var modalText=document.getElementById('modalText');
+  var modalActions=document.getElementById('modalActions');
+  function openModal(title,desc,showInput){
+    modalTitle.textContent=title;
+    modalDesc.textContent=desc;
+    modalText.style.display=showInput?'block':'none';
+    modalActions.innerHTML='';
+    if(showInput){
+      var b=document.createElement('button');
+      b.className='btn btn-primary';b.type='button';b.textContent='提交意向';
+      b.addEventListener('click',function(){toast('已收到你的投稿意向，官方会尽快回复');modal.classList.remove('show');});
+      modalActions.appendChild(b);
+    }else{
+      ['微信','微博','QQ','复制链接'].forEach(function(name){
+        var sb=document.createElement('button');
+        sb.className='sb';sb.type='button';sb.textContent=name;
+        sb.addEventListener('click',function(){
+          if(name==='复制链接'){
+            copyText('胡桃大战史莱姆官方网站 · 原创奇幻冒险影像社区');
+          }else{
+            toast('已生成'+name+'分享卡片');
+          }
+        });
+        modalActions.appendChild(sb);
+      });
+    }
+    modal.classList.add('show');
+  }
+  document.querySelectorAll('.act.share').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      openModal('分享这支作品','选择你常用的渠道，把喜欢的内容分享给同好。',false);
+    });
+  });
+  var shareBtn=document.getElementById('shareBtn');
+  if(shareBtn) shareBtn.addEventListener('click',function(){openModal('分享本页','把胡桃大战史莱姆官方网站推荐给更多人。',false);});
+  var submitBtn=document.getElementById('submitBtn');
+  if(submitBtn) submitBtn.addEventListener('click',function(){openModal('投稿入口','请简单描述你的作品方向与预计时长，官方团队会在五个工作日内通过邮件回复你。',true);});
+  document.getElementById('modalClose').addEventListener('click',function(){modal.classList.remove('show');});
+  modal.addEventListener('click',function(e){if(e.target===modal) modal.classList.remove('show');});
+
+  /* 复制 */
+  function copyText(text){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){toast('链接已复制到剪贴板');},function(){toast('复制失败，请手动选择');});
+    }else{
+      toast('链接已就绪，可手动复制');
+    }
+  }
+  var copyBtn=document.getElementById('copyBtn');
+  if(copyBtn) copyBtn.addEventListener('click',function(){
+    copyText('胡桃大战史莱姆官方网站 · 原创奇幻冒险影像社区');
+  });
+
+  /* 数字滚动 */
+  var nums=document.querySelectorAll('[data-count]');
+  var started=false;
+  function runCounts(){
+    if(started) return;started=true;
+    nums.forEach(function(el){
+      var target=parseInt(el.getAttribute('data-count'),10);
+      var start=performance.now();
+      var dur=1300;
+      function step(now){
+        var p=Math.min((now-start)/dur,1);
+        var eased=1-Math.pow(1-p,3);
+        var val=Math.floor(target*eased);
+        el.textContent=val.toLocaleString('zh-CN');
+        if(p<1) requestAnimationFrame(step);
+        else el.textContent=target.toLocaleString('zh-CN');
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if('IntersectionObserver' in window){
+    var hero=document.querySelector('.hero-stats');
+    if(hero){
+      var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){runCounts();io.disconnect();}});},{threshold:.4});
+      io.observe(hero);
+    }else{runCounts();}
+  }else{runCounts();}
+
+  /* 回到顶部 */
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    toTop.classList.toggle('show',window.scrollY>560);
+  },{passive:true});
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+  </html>
